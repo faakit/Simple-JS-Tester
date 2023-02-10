@@ -1,14 +1,14 @@
 ///////////////     HTML Helpers  ///////////////
-const printTest = (desc, pass, error) => {
+const printTest = (desc, error) => {
     const card = document.createElement('div');
-    card.className = `card ${pass ? 'bg-success' : 'bg-danger'}`;
+    card.className = `card ${!error ? 'bg-success' : 'bg-danger'}`;
     const cardBody = card.appendChild(document.createElement('div'));
     cardBody.className = 'card-body';
     const header = cardBody.appendChild(document.createElement('div'));
     header.className = 'd-inline';
     const h5 = header.appendChild(document.createElement('h5'));
     h5.className = 'me-2 d-inline';
-    h5.innerText = pass ? 'PASS -' : 'FAIL -';
+    h5.innerText = !error ? 'PASS -' : 'FAIL -';
     const h5_2 = header.appendChild(document.createElement('h5'));
     h5_2.innerText = desc;
     h5_2.className = 'd-inline';
@@ -43,10 +43,10 @@ const describe = (module, fn) => {
 const it = (desc, fn) => {
     try {
         fn();
-        printTest(desc, true);
+        printTest(desc);
         console.log(`PASS - ${desc}`);
     } catch (error) {
-        printTest(desc, false, error);
+        printTest(desc, error);
         console.log(`FAIL - ${desc}`);
         console.error(error);
     }
