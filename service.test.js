@@ -60,3 +60,25 @@ describe('encheLinguiça', () => {
         assert(result).not().toBeCloseTo(0.3);
     })
 })
+
+
+describe('simple tests', () => {
+    it('should be true', () => {
+        assert(true).toBe(true);
+    });
+
+    it('should be equal arrays', () => {
+        const array = [1, 2, 3];
+        const array2 = [1, 2, 3];
+
+        assert(array).toEqual(array2);
+    });
+
+    it('0.1 + 0.2 should be 0.3', () => {
+        assert(0.1 + 0.2).toBeCloseTo(0.3);
+    });
+
+    it('should fail', () => {
+        assert(0.1 + 0.2).toBe(0.3);        
+    });
+})
