@@ -5,7 +5,7 @@
   <img src="screenshot.png" alt="Visual Preview" width="100%">
 </p>
 
--- TABLE OF CONTENTS -->
+<!-- TABLE OF CONTENTS -->
 <h2 id="summary"> :book: Sumário</h2>
 
 <details open="open">
